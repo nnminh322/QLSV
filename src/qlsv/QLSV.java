@@ -7,6 +7,7 @@ package qlsv;
 import com.sun.jdi.connect.spi.Connection;
 import connection.ConnectionToDB;
 import view.Admin;
+import view.Login;
 
 /**
  *
@@ -19,7 +20,8 @@ public class QLSV {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        java.sql.Connection conn = ConnectionToDB.getConnection();
+        Login login = new Login();
+        login.setVisible(true);
     }
-    
+
 }
