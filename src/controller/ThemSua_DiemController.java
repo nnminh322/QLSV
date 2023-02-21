@@ -37,12 +37,12 @@ public class ThemSua_DiemController implements ActionListener {
     public void setThemSua_DiemView(ThemSua_Diem themSua_DiemView) {
         this.themSua_DiemView = themSua_DiemView;
     }
-    
 
     @Override
     public void actionPerformed(ActionEvent e) {
         String actionCommand = e.getActionCommand();
         if (actionCommand.equals("Lưu")) {
+            String tittle = themSua_DiemView.getTitle();
             String maLop = themSua_DiemView.getjTextField_MaLop().getText();
             String maHP = themSua_DiemView.getjTextField_MaHocPhan().getText();
             String MSSV = themSua_DiemView.getjTextField_MSSV().getText();
@@ -51,7 +51,12 @@ public class ThemSua_DiemController implements ActionListener {
             float trongSoQT = Float.parseFloat(themSua_DiemView.getjTextField_TrongSo().getText());
 
             Diem diem = new Diem(maLop, maHP, MSSV, diemQT, diemCK, trongSoQT);
-            this.insert(diem);
+            if (tittle.equals("Thêm mới điểm")) {
+                this.insert(diem);
+            }
+            if (tittle.equals("Sửa điểm")) {
+                this.update(diem);
+            }
             JOptionPane.showMessageDialog(themSua_DiemView, "Đã lưu");
             themSua_DiemView.dispose();
 
@@ -60,6 +65,10 @@ public class ThemSua_DiemController implements ActionListener {
 
     public int insert(Diem diem) {
         return DiemDAO.getInstance().insert(diem);
+    }
+
+    public int update(Diem diem) {
+        return DiemDAO.getInstance().update(diem);
     }
 
 }

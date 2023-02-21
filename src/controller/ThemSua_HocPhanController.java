@@ -15,7 +15,7 @@ import view.ThemSua_HocPhan;
  *
  * @author nnminh322
  */
-public class ThemSua_HocPhanController implements ActionListener{
+public class ThemSua_HocPhanController implements ActionListener {
 
     public ThemSua_HocPhan themSua_HocPhanView;
 
@@ -35,26 +35,33 @@ public class ThemSua_HocPhanController implements ActionListener{
     public void setThemSua_HocPhanView(ThemSua_HocPhan themSua_HocPhanView) {
         this.themSua_HocPhanView = themSua_HocPhanView;
     }
-    
-    
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         String actionCommand = e.getActionCommand();
         if (actionCommand.equals("Lưu")) {
+            String tittle = themSua_HocPhanView.getTitle();
             String MaHP = themSua_HocPhanView.getjTextField_MaHP().getText();
             String TenHP = themSua_HocPhanView.getjTextField_TenHP().getText();
             int SoTinChi = Integer.parseInt(themSua_HocPhanView.getjTextField_SoTinChi().getText());
-            
+
             HocPhan hocPhan = new HocPhan(MaHP, TenHP, SoTinChi);
-            this.insert(hocPhan);
+            if (tittle.equals("Thêm mới học phần")) {
+                this.insert(hocPhan);
+            }
+            if (tittle.equals("Sửa học phần")) {
+                this.update(hocPhan);
+            }
             JOptionPane.showMessageDialog(themSua_HocPhanView, "Đã lưu");
             themSua_HocPhanView.dispose();
-            
         }
     }
-    
-    public int insert(HocPhan hocPhan){
+
+    public int insert(HocPhan hocPhan) {
         return HocPhanDAO.getInstance().insert(hocPhan);
+    }
+
+    public int update(HocPhan hocPhan) {
+        return HocPhanDAO.getInstance().update(hocPhan);
     }
 }

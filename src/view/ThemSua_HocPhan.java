@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import model.HocPhan;
 
 /**
  *
@@ -25,16 +26,23 @@ public class ThemSua_HocPhan extends javax.swing.JFrame {
         initComponents();
         init();
     }
-
+    
     public ThemSua_HocPhan() {
         initComponents();
         init();
     }
-
+    
     public void init() {
         this.themSua_HocPhanController = new ThemSua_HocPhanController();
         ActionListener action = new ThemSua_HocPhanController(this);
         this.jButton_Luu.addActionListener(action);
+    }
+
+    public void suaHocPhan(HocPhan hocPhan) {
+        this.jTextField_MaHP.setText(hocPhan.getMaHP());
+        this.jTextField_MaHP.setEditable(false);
+        this.jTextField_TenHP.setText(hocPhan.getTenHP());
+        this.jTextField_SoTinChi.setText(String.valueOf(hocPhan.getSoTinChi()));
     }
 
     /**
@@ -109,19 +117,19 @@ public class ThemSua_HocPhan extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextField_MaHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField_TenHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jTextField_SoTinChi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_Luu)
                     .addComponent(jButton2))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -187,105 +195,105 @@ public class ThemSua_HocPhan extends javax.swing.JFrame {
     public ThemSua_HocPhanController getThemSua_HocPhanController() {
         return themSua_HocPhanController;
     }
-
+    
     public void setThemSua_HocPhanController(ThemSua_HocPhanController themSua_HocPhanController) {
         this.themSua_HocPhanController = themSua_HocPhanController;
     }
-
+    
     public JButton getjButton1() {
         return jButton_Luu;
     }
-
+    
     public void setjButton1(JButton jButton1) {
         this.jButton_Luu = jButton1;
     }
-
+    
     public JButton getjButton2() {
         return jButton2;
     }
-
+    
     public void setjButton2(JButton jButton2) {
         this.jButton2 = jButton2;
     }
-
+    
     public JLabel getjLabel1() {
         return jLabel1;
     }
-
+    
     public void setjLabel1(JLabel jLabel1) {
         this.jLabel1 = jLabel1;
     }
-
+    
     public JLabel getjLabel2() {
         return jLabel2;
     }
-
+    
     public void setjLabel2(JLabel jLabel2) {
         this.jLabel2 = jLabel2;
     }
-
+    
     public JLabel getjLabel3() {
         return jLabel3;
     }
-
+    
     public void setjLabel3(JLabel jLabel3) {
         this.jLabel3 = jLabel3;
     }
-
+    
     public JTextField getjTextField1() {
         return jTextField_MaHP;
     }
-
+    
     public void setjTextField1(JTextField jTextField1) {
         this.jTextField_MaHP = jTextField1;
     }
-
+    
     public JTextField getjTextField2() {
         return jTextField_TenHP;
     }
-
+    
     public void setjTextField2(JTextField jTextField2) {
         this.jTextField_TenHP = jTextField2;
     }
-
+    
     public JTextField getjTextField3() {
         return jTextField_SoTinChi;
     }
-
+    
     public void setjTextField3(JTextField jTextField3) {
         this.jTextField_SoTinChi = jTextField3;
     }
-
+    
     public JButton getjButton_Luu() {
         return jButton_Luu;
     }
-
+    
     public void setjButton_Luu(JButton jButton_Luu) {
         this.jButton_Luu = jButton_Luu;
     }
-
+    
     public JTextField getjTextField_MaHP() {
         return jTextField_MaHP;
     }
-
+    
     public void setjTextField_MaHP(JTextField jTextField_MaHP) {
         this.jTextField_MaHP = jTextField_MaHP;
     }
-
+    
     public JTextField getjTextField_SoTinChi() {
         return jTextField_SoTinChi;
     }
-
+    
     public void setjTextField_SoTinChi(JTextField jTextField_SoTinChi) {
         this.jTextField_SoTinChi = jTextField_SoTinChi;
     }
-
+    
     public JTextField getjTextField_TenHP() {
         return jTextField_TenHP;
     }
-
+    
     public void setjTextField_TenHP(JTextField jTextField_TenHP) {
         this.jTextField_TenHP = jTextField_TenHP;
     }
-
+    
 }

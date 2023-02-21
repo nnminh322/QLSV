@@ -11,12 +11,18 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import model.GiangVien;
+import model.SinhVien;
+import java.util.Date;
 
 /**
  *
  * @author nnminh322
  */
 public class ThemSua_GvSv extends javax.swing.JFrame {
+
+    private SinhVien sinhVien;
+    private GiangVien giangVien;
 
     /**
      * Creates new form ThemMoi
@@ -36,6 +42,30 @@ public class ThemSua_GvSv extends javax.swing.JFrame {
         this.themSua_GvSvController = new ThemSua_GvSvController();
         ActionListener action = new ThemSua_GvSvController(this);
         this.jButton_Luu.addActionListener(action);
+    }
+
+    public void suaGiangVien(GiangVien giangVien) {
+        this.jTextField_MS.setText(giangVien.getMSGV());
+        this.jTextField_MS.setEditable(false);
+        this.jTextField_HoTen.setText(giangVien.getHoTen());
+        this.jComboBox_GioiTinh.setSelectedItem(giangVien.getGioiTinh());
+        java.util.Date ngaySinh = new java.util.Date(giangVien.getNgaySinh().getTime());
+        this.jDateChooser_NgaySinh.setDate(ngaySinh);
+        this.jTextField_SDT.setText(giangVien.getSDT());
+        this.jTextField_QueQuan.setText(giangVien.getQueQuan());
+        this.jTextField_Email.setText(giangVien.getEmail());
+    }
+
+    public void suaSinhVien(SinhVien sinhVien) {
+        this.jTextField_MS.setText(sinhVien.getMSSV());
+        this.jTextField_MS.setEditable(false);
+        this.jTextField_HoTen.setText(sinhVien.getHoTen());
+        this.jComboBox_GioiTinh.setSelectedItem(sinhVien.getGioiTinh());
+        java.util.Date ngaySinh = new java.util.Date(sinhVien.getNgaySinh().getTime());
+        this.jDateChooser_NgaySinh.setDate(ngaySinh);
+        this.jTextField_SDT.setText(sinhVien.getSDT());
+        this.jTextField_QueQuan.setText(sinhVien.getQueQuan());
+        this.jTextField_Email.setText(sinhVien.getEmail());
     }
 
     /**

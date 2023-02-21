@@ -17,12 +17,12 @@ import model.GiangVien;
  *
  * @author nnminh322
  */
-public class GiangVienDAO implements DAOInterface<GiangVien>{
+public class GiangVienDAO implements DAOInterface<GiangVien> {
 
-    public static GiangVienDAO getInstance(){
+    public static GiangVienDAO getInstance() {
         return new GiangVienDAO();
     }
-    
+
     @Override
     public int insert(GiangVien t) {
         int ketQua;
@@ -44,18 +44,16 @@ public class GiangVienDAO implements DAOInterface<GiangVien>{
         return 0;
     }
 
-
-
     @Override
     public int delete(GiangVien t) {
-        
+
         int ketQua;
         try {
             java.sql.Connection conn = new ConnectionToDB().getConnection();
 
             java.sql.Statement st = conn.createStatement();
-            
-            String sql = "DELETE FROM GiangVien WHERE `GiangVien`.`MSGV` = '"+t.getMSGV()+"'";
+
+            String sql = "DELETE FROM GiangVien WHERE `GiangVien`.`MSGV` = '" + t.getMSGV() + "'";
 
 //            System.out.println(sql);
             ketQua = st.executeUpdate(sql);
@@ -87,7 +85,7 @@ public class GiangVienDAO implements DAOInterface<GiangVien>{
                 String QueQuan = rs.getString("QueQuan");
                 String SDT = rs.getString("SDT");
                 String Email = rs.getString("Email");
-                
+
                 GiangVien giangVien = new GiangVien(MSGV, HoTen, GioiTinh, NgaySinh, QueQuan, SDT, Email);
                 listGiangVien.add(giangVien);
             }
@@ -103,12 +101,55 @@ public class GiangVienDAO implements DAOInterface<GiangVien>{
 
     @Override
     public ArrayList<GiangVien> find(String Condition) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<GiangVien> listGiangVien = new ArrayList<GiangVien>();
+        try {
+            java.sql.Connection conn = new ConnectionToDB().getConnection();
+
+            java.sql.Statement st = conn.createStatement();
+
+            String sql = "SELECT * FROM GiangVien WHERE "+ Condition;
+
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                String MSGV = rs.getString("MSGV");
+                String HoTen = rs.getString("HoTen");
+                String GioiTinh = rs.getString("GioiTinh");
+                Date NgaySinh = rs.getDate("NgaySinh");
+                String QueQuan = rs.getString("QueQuan");
+                String SDT = rs.getString("SDT");
+                String Email = rs.getString("Email");
+
+                GiangVien giangVien = new GiangVien(MSGV, HoTen, GioiTinh, NgaySinh, QueQuan, SDT, Email);
+                listGiangVien.add(giangVien);
+            }
+
+            ConnectionToDB.close(conn);
+//            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        } catch (SQLException ex) {
+            Logger.getLogger(GiangVienDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return listGiangVien;
     }
 
     @Override
-    public int update(GiangVien tCu, GiangVien tMoi) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int update(GiangVien t) {
+        int ketQua;
+        try {
+            java.sql.Connection conn = new ConnectionToDB().getConnection();
+
+            java.sql.Statement st = conn.createStatement();
+
+            String sql = "UPDATE `GiangVien` SET `HoTen` = '" + t.getHoTen() + "', `NgaySinh` = '" + t.getNgaySinh() + "', `QueQuan` = '" + t.getQueQuan() + "', `SDT` = '" + t.getSDT() + "', `Email` = '" + t.getEmail() + "' WHERE `GiangVien`.`MSGV` = '" + t.getMSGV() + "'";
+//            System.out.println(sql);
+            ketQua = st.executeUpdate(sql);
+
+            ConnectionToDB.close(conn);
+//            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        } catch (SQLException ex) {
+            Logger.getLogger(GiangVienDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
     }
-    
+
 }

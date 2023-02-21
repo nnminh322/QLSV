@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import model.Diem;
 
 /**
  *
@@ -35,6 +36,19 @@ public class ThemSua_Diem extends javax.swing.JFrame {
         this.themSua_DiemController = new ThemSua_DiemController(this);
         ActionListener action = new ThemSua_DiemController(this);
         this.jButton_Luu.addActionListener(action);
+    }
+
+    public void suaDiem(Diem diem) {
+        this.jTextField_MaLop.setText(diem.getMaLop());
+        this.jTextField_MaLop.setEditable(false);
+        this.jTextField_MaHocPhan.setText(diem.getMaHP());
+        this.jTextField_MaHocPhan.setEditable(false);
+        this.jTextField_MSSV.setText(diem.getMSSV());
+        this.jTextField_MSSV.setEditable(false);
+        this.jTextField_DiemQT.setText(String.valueOf(diem.getDiemQT()));
+        this.jTextField_DiemCK.setText(String.valueOf(diem.getDiemCK()));
+        this.jTextField_TrongSo.setText(String.valueOf(diem.getTrongSoQT()));
+
     }
 
     /**

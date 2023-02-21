@@ -9,12 +9,13 @@ package model;
  * @author nnminh322
  */
 public class Diem {
-  private String maLop;
-  private String maHP;
-  private String MSSV;
-  private float diemQT;
-  private float diemCK;
-  private float trongSoQT;
+
+    private String maLop;
+    private String maHP;
+    private String MSSV;
+    private float diemQT;
+    private float diemCK;
+    private float trongSoQT;
 
     public Diem(String maLop, String maHP, String MSSV, float diemQT, float diemCK, float trongSoQT) {
         this.maLop = maLop;
@@ -72,4 +73,5 @@ public class Diem {
     public void setTrongSoQT(float trongSoQT) {
         this.trongSoQT = trongSoQT;
     }
+
 }

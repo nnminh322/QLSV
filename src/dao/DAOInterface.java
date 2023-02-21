@@ -11,14 +11,14 @@ import java.util.ArrayList;
  * @author nnminh322
  */
 public interface DAOInterface<T> {
-    
+
     public int insert(T t);
-    
-    public int update(T tCu,T tMoi);
-    
+
+    public int update(T t);
+
     public int delete(T t);
-    
+
     public ArrayList<T> selectAll();
-    
+
     public ArrayList<T> find(String Condition);
 }

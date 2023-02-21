@@ -55,6 +55,7 @@ public class ThemSua_GvSvController implements ActionListener {
             String QueQuan = themSua_GvSvView.getjTextField_QueQuan().getText();
             String SDT = themSua_GvSvView.getjTextField_SDT().getText();
             String Email = themSua_GvSvView.getjTextField_Email().getText();
+            
             if (themSua_GvSvView.getTitle().equals("Thêm mới sinh viên")) {
                 SinhVien sv = new SinhVien(MS, HoTen, GioiTinh, NgaySinh, QueQuan, SDT, Email);
 //            System.out.println(themSua_GvSvView.getTitle());
@@ -66,7 +67,16 @@ public class ThemSua_GvSvController implements ActionListener {
 //            System.out.println(themSua_GvSvView.getTitle());
                 this.insert(gv);
             }
-
+            if (themSua_GvSvView.getTitle().equals("Sửa sinh viên")) {
+                SinhVien sv = new SinhVien(MS, HoTen, GioiTinh, NgaySinh, QueQuan, SDT, Email);
+//            System.out.println(themSua_GvSvView.getTitle());
+                this.update(sv);
+            }
+            if (themSua_GvSvView.getTitle().equals("Sửa giảng viên")) {
+                GiangVien gv = new GiangVien(MS, HoTen, GioiTinh, NgaySinh, QueQuan, SDT, Email);
+//            System.out.println(themSua_GvSvView.getTitle());
+                this.update(gv);
+            }
             JOptionPane.showMessageDialog(themSua_GvSvView, "Đã lưu!");
             themSua_GvSvView.dispose();
 
@@ -80,5 +90,13 @@ public class ThemSua_GvSvController implements ActionListener {
 
     public int insert(GiangVien giangVien) {
         return GiangVienDAO.getInstance().insert(giangVien);
+    }
+
+    public int update(GiangVien giangVien) {
+        return GiangVienDAO.getInstance().update(giangVien);
+    }
+
+    public int update(SinhVien sinhVien) {
+        return SinhVienDAO.getInstance().update(sinhVien);
     }
 }

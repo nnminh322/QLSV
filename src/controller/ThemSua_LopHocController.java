@@ -26,7 +26,6 @@ public class ThemSua_LopHocController implements ActionListener {
     public void setThemSua_LopHocView(ThemSua_LopHoc themSua_LopHocView) {
         this.themSua_LopHocView = themSua_LopHocView;
     }
-    
 
     public ThemSua_LopHocController(ThemSua_LopHoc themSua_LopHocView) {
         super();
@@ -41,6 +40,7 @@ public class ThemSua_LopHocController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String actionCommand = e.getActionCommand();
         if (actionCommand.equals("Lưu")) {
+            String tittle = themSua_LopHocView.getTitle();
             String MaLop = themSua_LopHocView.getjTextField_MaLop().getText();
             String MaHP = themSua_LopHocView.getjTextField_MaHopPhan().getText();
             String MSGV = themSua_LopHocView.getjTextField_MSGV().getText();
@@ -49,7 +49,12 @@ public class ThemSua_LopHocController implements ActionListener {
 
             LopHoc lopHoc = new LopHoc(MaLop, MaHP, MSGV, PhongHoc, ThoiGian);
 //            System.out.println(lopHoc.toString());
-            this.insert(lopHoc);
+            if (tittle.equals("Thêm mới lớp học")) {
+                this.insert(lopHoc);
+            }
+            if (tittle.equals("Sửa lớp học")) {
+                this.update(lopHoc);
+            }
             JOptionPane.showMessageDialog(themSua_LopHocView, "Đã lưu");
             this.themSua_LopHocView.dispose();
 
@@ -60,4 +65,7 @@ public class ThemSua_LopHocController implements ActionListener {
         return LopHocDAO.getInstance().insert(lopHoc);
     }
 
+    public int update(LopHoc lopHoc) {
+        return LopHocDAO.getInstance().update(lopHoc);
+    }
 }
