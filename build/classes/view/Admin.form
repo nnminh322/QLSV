@@ -522,7 +522,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton_xoaHocPhan">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
+                <Property name="text" type="java.lang.String" value="Xo&#xe1; h&#x1ecd;c ph&#x1ea7;n"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane5">
@@ -726,7 +726,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton_xoaLopHoc">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
+                <Property name="text" type="java.lang.String" value="Xo&#xe1; l&#x1edb;p h&#x1ecd;c"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -886,7 +886,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton_xoaDiem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
+                <Property name="text" type="java.lang.String" value="Xo&#xe1; &#x111;i&#x1ec3;m"/>
               </Properties>
             </Component>
           </SubComponents>

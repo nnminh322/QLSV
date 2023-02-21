@@ -36,6 +36,27 @@ public class XacNhan extends javax.swing.JFrame {
         init();
     }
 
+    public XacNhan(Admin adminView, HocPhan hocPhan) {
+        this.adminView = adminView;
+        this.hocPhan = hocPhan;
+        initComponents();
+        init();
+    }
+
+    public XacNhan(Admin adminView, LopHoc lopHoc) {
+        this.adminView = adminView;
+        this.lopHoc = lopHoc;
+        initComponents();
+        init();
+    }
+
+    public XacNhan(Admin adminView, Diem diem) {
+        this.adminView = adminView;
+        this.diem = diem;
+        initComponents();
+        init();
+    }
+
     public void init() {
         this.xacNhanController = new XacNhanController(this);
         ActionListener action = new XacNhanController(this);
@@ -151,6 +172,9 @@ public class XacNhan extends javax.swing.JFrame {
     public Admin adminView;
     public SinhVien sinhVien;
     public GiangVien giangVien;
+    public HocPhan hocPhan;
+    public LopHoc lopHoc;
+    public Diem diem;
     private XacNhanController xacNhanController;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;

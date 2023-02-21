@@ -364,7 +364,7 @@ public class Admin extends javax.swing.JFrame {
 
         jButton_suaHocPhan.setText("Sửa học phần");
 
-        jButton_xoaHocPhan.setText("Xoá");
+        jButton_xoaHocPhan.setText("Xoá học phần");
 
         jTable_HocPhan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -487,7 +487,7 @@ public class Admin extends javax.swing.JFrame {
 
         jButton_suaLopHoc.setText("Sửa lớp học");
 
-        jButton_xoaLopHoc.setText("Xoá");
+        jButton_xoaLopHoc.setText("Xoá lớp học");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -573,7 +573,7 @@ public class Admin extends javax.swing.JFrame {
 
         jButton_suaDiem.setText("Sửa điểm");
 
-        jButton_xoaDiem.setText("Xoá");
+        jButton_xoaDiem.setText("Xoá điểm");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);

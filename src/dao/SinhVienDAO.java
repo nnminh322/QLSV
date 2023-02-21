@@ -4,8 +4,6 @@
  */
 package dao;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
 import connection.ConnectionToDB;
 import java.sql.SQLException;
 import java.util.ArrayList;

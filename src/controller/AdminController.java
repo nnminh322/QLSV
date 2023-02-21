@@ -12,7 +12,6 @@ import dao.SinhVienDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.Action;
 import javax.swing.JOptionPane;
 import model.Diem;
 import model.GiangVien;
@@ -131,7 +130,58 @@ public class AdminController implements ActionListener {
                 xacNhanView.setVisible(true);
             }
         }
+        if (actionCommand.equals("Xoá học phần")) {
+            int ChonHocPhan = adminView.getjTable_HocPhan().getSelectedRow();
+            if (ChonHocPhan == -1) {
+                JOptionPane.showMessageDialog(xacNhanView, "Bạn chưa chọn học phần!");
+            } else {
+                String MaHP = adminView.getjTable_HocPhan().getValueAt(ChonHocPhan, 0).toString();
+                String TenHP = adminView.getjTable_HocPhan().getValueAt(ChonHocPhan, 1).toString();
+                int MaHocPhan = Integer.parseInt(adminView.getjTable_HocPhan().getValueAt(ChonHocPhan, 2).toString());
 
+                HocPhan hocPhan = new HocPhan(MaHP, TenHP, MaHocPhan);
+                xacNhanView = new XacNhan(adminView, hocPhan);
+                xacNhanView.setTitle(actionCommand);
+                xacNhanView.setVisible(true);
+
+            }
+        }
+        if (actionCommand.equals("Xoá lớp học")) {
+            int ChonLopHoc = adminView.getjTable_LopHoc().getSelectedRow();
+            if (ChonLopHoc == -1) {
+                JOptionPane.showMessageDialog(xacNhanView, "Bạn chưa chọn học phần!");
+            } else {
+                String MaLop = adminView.getjTable_LopHoc().getValueAt(ChonLopHoc, 0).toString();
+                String MaHP = adminView.getjTable_LopHoc().getValueAt(ChonLopHoc, 1).toString();
+                String MSGV = adminView.getjTable_LopHoc().getValueAt(ChonLopHoc, 2).toString();
+                String PhongHoc = adminView.getjTable_LopHoc().getValueAt(ChonLopHoc, 4).toString();
+                String ThoiGian = adminView.getjTable_LopHoc().getValueAt(ChonLopHoc, 4).toString();
+
+                LopHoc lopHoc = new LopHoc(MaLop, MaHP, MSGV, PhongHoc, ThoiGian);
+                xacNhanView = new XacNhan(adminView, lopHoc);
+                xacNhanView.setTitle(actionCommand);
+                xacNhanView.setVisible(true);
+
+            }
+        }
+        if (actionCommand.equals("Xoá điểm")) {
+            int ChonDiem = adminView.getjTable_Diem().getSelectedRow();
+            if (ChonDiem == -1) {
+                JOptionPane.showMessageDialog(xacNhanView, "Bạn chưa chọn điểm!");
+            } else {
+                String maLop = adminView.getjTable_Diem().getValueAt(ChonDiem, 0).toString();
+                String maHP = adminView.getjTable_Diem().getValueAt(ChonDiem, 1).toString();
+                String MSSV = adminView.getjTable_Diem().getValueAt(ChonDiem, 2).toString();
+                float diemQT = Float.parseFloat(adminView.getjTable_Diem().getValueAt(ChonDiem, 3).toString());
+                float diemCK = Float.parseFloat(adminView.getjTable_Diem().getValueAt(ChonDiem, 4).toString());
+                float trongSoQT = Float.parseFloat(adminView.getjTable_Diem().getValueAt(ChonDiem, 5).toString());
+
+                Diem diem = new Diem(maLop, maHP, MSSV, diemQT, diemCK, trongSoQT);
+                xacNhanView = new XacNhan(adminView, diem);
+                xacNhanView.setTitle(actionCommand);
+                xacNhanView.setVisible(true);
+            }
+        }
     }
 
     public ArrayList<SinhVien> hienThiSinhVien() {
