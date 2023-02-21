@@ -11,10 +11,6 @@ import javax.swing.JOptionPane;
 import model.HocPhan;
 import view.ThemSua_HocPhan;
 
-/**
- *
- * @author nnminh322
- */
 public class ThemSua_HocPhanController implements ActionListener {
 
     public ThemSua_HocPhan themSua_HocPhanView;

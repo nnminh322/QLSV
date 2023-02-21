@@ -7,10 +7,7 @@ package view;
 import javax.swing.JOptionPane;
 import service.LoginService;
 
-/**
- *
- * @author nnminh322
- */
+
 public class Login extends javax.swing.JFrame {
 
     /**
@@ -116,12 +113,12 @@ public class Login extends javax.swing.JFrame {
             admin.setVisible(true);
             this.dispose();
         } else if (LoginService.checkLogin(USERNAME, PASSWORD).equals("3")) {
-            SinhVienUI sinhVienUI = new SinhVienUI();
+            SinhVienUI sinhVienUI = new SinhVienUI(USERNAME);
             sinhVienUI.setVisible(true);
             this.dispose();
 
         } else if (LoginService.checkLogin(USERNAME, PASSWORD).equals("2")) {
-            GiangVienUI giangVienUI = new GiangVienUI();
+            GiangVienUI giangVienUI = new GiangVienUI(USERNAME);
             giangVienUI.setVisible(true);
             this.dispose();
 

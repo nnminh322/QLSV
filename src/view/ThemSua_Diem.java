@@ -8,14 +8,9 @@ import controller.ThemSua_DiemController;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import model.Diem;
 
-/**
- *
- * @author nnminh322
- */
 public class ThemSua_Diem extends javax.swing.JFrame {
 
     /**
@@ -28,6 +23,12 @@ public class ThemSua_Diem extends javax.swing.JFrame {
 
     public ThemSua_Diem(Admin adminView) {
         this.adminView = adminView;
+        initComponents();
+        init();
+    }
+
+    public ThemSua_Diem(GiangVienUI giangVienUI) {
+        this.giangVienUI = giangVienUI;
         initComponents();
         init();
     }
@@ -179,7 +180,11 @@ public class ThemSua_Diem extends javax.swing.JFrame {
 
     private void jButton_LuuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_LuuActionPerformed
         // TODO add your handling code here:
-        this.adminView.init();
+        if (giangVienUI == null) {
+            this.adminView.init();
+        } else {
+            this.giangVienUI.init();
+        }
     }//GEN-LAST:event_jButton_LuuActionPerformed
 
     /**
@@ -217,6 +222,7 @@ public class ThemSua_Diem extends javax.swing.JFrame {
         });
     }
     public Admin adminView;
+    public GiangVienUI giangVienUI;
     private ThemSua_DiemController themSua_DiemController;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Huy;

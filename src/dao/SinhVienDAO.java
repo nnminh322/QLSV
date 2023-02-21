@@ -12,10 +12,6 @@ import java.util.logging.Logger;
 import model.SinhVien;
 import java.sql.*;
 
-/**
- *
- * @author nnminh322
- */
 public class SinhVienDAO implements DAOInterface<SinhVien> {
 
     public static SinhVienDAO getInstance() {

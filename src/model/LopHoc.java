@@ -4,10 +4,6 @@
  */
 package model;
 
-/**
- *
- * @author nnminh322
- */
 public class LopHoc {
     private String MaLop;
     private String MaHP;

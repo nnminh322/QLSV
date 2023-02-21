@@ -8,10 +8,6 @@ package service;
 import connection.ConnectionToDB;
 import java.sql.ResultSet;
 
-/**
- *
- * @author nnminh322
- */
 public class LoginService {
 
     public static String checkLogin(String username, String password) {

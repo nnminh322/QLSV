@@ -12,10 +12,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.HocPhan;
 
-/**
- *
- * @author nnminh322
- */
 public class HocPhanDAO implements DAOInterface<HocPhan> {
 
     public static HocPhanDAO getInstance() {

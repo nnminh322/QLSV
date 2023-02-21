@@ -13,10 +13,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.GiangVien;
 
-/**
- *
- * @author nnminh322
- */
 public class GiangVienDAO implements DAOInterface<GiangVien> {
 
     public static GiangVienDAO getInstance() {
@@ -107,8 +103,8 @@ public class GiangVienDAO implements DAOInterface<GiangVien> {
 
             java.sql.Statement st = conn.createStatement();
 
-            String sql = "SELECT * FROM GiangVien WHERE "+ Condition;
-
+            String sql = "SELECT * FROM GiangVien WHERE " + Condition;
+//            System.out.println(sql);
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
                 String MSGV = rs.getString("MSGV");

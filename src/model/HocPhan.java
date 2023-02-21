@@ -4,10 +4,6 @@
  */
 package model;
 
-/**
- *
- * @author nnminh322
- */
 public class HocPhan {
     private String MaHP;
     private String TenHP;

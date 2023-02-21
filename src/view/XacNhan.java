@@ -8,10 +8,6 @@ import controller.XacNhanController;
 import java.awt.event.ActionListener;
 import model.*;
 
-/**
- *
- * @author nnminh322
- */
 public class XacNhan extends javax.swing.JFrame {
 
     /**
@@ -57,6 +53,13 @@ public class XacNhan extends javax.swing.JFrame {
         init();
     }
 
+    public XacNhan(GiangVienUI giangVienUI, Diem diem) {
+        this.adminView = adminView;
+        this.diem = diem;
+        initComponents();
+        init();
+    }
+
     public void init() {
         this.xacNhanController = new XacNhanController(this);
         ActionListener action = new XacNhanController(this);
@@ -78,16 +81,16 @@ public class XacNhan extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
-        jLabel1.setText("Mày chắc chưa :))))");
+        jLabel1.setText("Xác nhận xoá?");
 
-        jButton_Ok.setText("Bố mày chắc rồi");
+        jButton_Ok.setText("Xác nhận");
         jButton_Ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_OkActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Đợi tí tao nghĩ lại");
+        jButton2.setText("Huỷ");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -99,23 +102,22 @@ public class XacNhan extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jButton_Ok)
-                        .addGap(28, 28, 28)
-                        .addComponent(jButton2)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(152, 152, 152)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jButton_Ok)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(79, 79, 79))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addGap(84, 84, 84)
                 .addComponent(jLabel1)
-                .addGap(63, 63, 63)
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_Ok)
                     .addComponent(jButton2))
@@ -132,7 +134,11 @@ public class XacNhan extends javax.swing.JFrame {
 
     private void jButton_OkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_OkActionPerformed
         // TODO add your handling code here:
-        this.adminView.init();
+        if (giangVienUI == null) {
+            this.adminView.init();
+        } else {
+            this.giangVienUI.init();
+        }
     }//GEN-LAST:event_jButton_OkActionPerformed
 
     /**
@@ -175,6 +181,7 @@ public class XacNhan extends javax.swing.JFrame {
     public HocPhan hocPhan;
     public LopHoc lopHoc;
     public Diem diem;
+    public GiangVienUI giangVienUI;
     private XacNhanController xacNhanController;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;

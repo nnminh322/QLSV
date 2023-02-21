@@ -11,14 +11,6 @@ import model.GiangVien;
 import model.SinhVien;
 import view.ThemSua_GvSv;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-/**
- *
- * @author nnminh322
- */
 public class ThemSua_GvSvController implements ActionListener {
 
     public ThemSua_GvSv themSua_GvSvView;

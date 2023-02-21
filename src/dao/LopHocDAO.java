@@ -12,10 +12,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.LopHoc;
 
-/**
- *
- * @author nnminh322
- */
 public class LopHocDAO implements DAOInterface<LopHoc> {
 
     public static LopHocDAO getInstance() {

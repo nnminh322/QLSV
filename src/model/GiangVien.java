@@ -6,10 +6,6 @@ package model;
 
 import java.sql.Date;
 
-/**
- *
- * @author nnminh322
- */
 public class GiangVien {
     private String MSGV;
     private String HoTen;

@@ -17,10 +17,6 @@ import model.GiangVien;
 import model.HocPhan;
 import model.LopHoc;
 
-/**
- *
- * @author nnminh322
- */
 public class Admin extends javax.swing.JFrame {
 
     /**

@@ -15,10 +15,7 @@ import model.GiangVien;
 import model.SinhVien;
 import java.util.Date;
 
-/**
- *
- * @author nnminh322
- */
+
 public class ThemSua_GvSv extends javax.swing.JFrame {
 
     private SinhVien sinhVien;

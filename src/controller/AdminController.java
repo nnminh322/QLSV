@@ -25,10 +25,6 @@ import view.ThemSua_HocPhan;
 import view.ThemSua_LopHoc;
 import view.XacNhan;
 
-/**
- *
- * @author nnminh322
- */
 public class AdminController implements ActionListener {
 
     public Admin adminView;

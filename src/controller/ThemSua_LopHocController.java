@@ -11,10 +11,6 @@ import javax.swing.JOptionPane;
 import model.LopHoc;
 import view.ThemSua_LopHoc;
 
-/**
- *
- * @author nnminh322
- */
 public class ThemSua_LopHocController implements ActionListener {
 
     public ThemSua_LopHoc themSua_LopHocView;

@@ -13,10 +13,6 @@ import model.HocPhan;
 import view.Admin;
 import view.ThemSua_Diem;
 
-/**
- *
- * @author nnminh322
- */
 public class ThemSua_DiemController implements ActionListener {
 
     public ThemSua_Diem themSua_DiemView;

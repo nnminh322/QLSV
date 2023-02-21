@@ -8,10 +8,6 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author nnminh322
- */
 public class ConnectionToDB {
 
     public static Connection getConnection() {
@@ -39,5 +35,5 @@ public class ConnectionToDB {
             Logger.getLogger(ConnectionToDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }

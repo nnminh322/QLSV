@@ -13,10 +13,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import model.LopHoc;
 
-/**
- *
- * @author nnminh322
- */
 public class ThemSua_LopHoc extends javax.swing.JFrame {
 
     /**

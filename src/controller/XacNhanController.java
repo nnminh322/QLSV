@@ -19,10 +19,6 @@ import model.LopHoc;
 import model.SinhVien;
 import view.XacNhan;
 
-/**
- *
- * @author nnminh322
- */
 public class XacNhanController implements ActionListener {
 
     private SinhVien sinhVien;
@@ -39,7 +35,7 @@ public class XacNhanController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String actionCommand = e.getActionCommand();
-        if (actionCommand.equals("Bố mày chắc rồi")) {
+        if (actionCommand.equals("Xác nhận")) {
             String tittle = this.xacNhanView.getTitle();
             if (tittle.equals("Xoá sinh viên")) {
                 this.delete(xacNhanView.sinhVien);

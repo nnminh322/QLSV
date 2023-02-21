@@ -4,10 +4,6 @@
  */
 package model;
 
-/**
- *
- * @author nnminh322
- */
 public class Diem {
 
     private String maLop;
@@ -16,6 +12,7 @@ public class Diem {
     private float diemQT;
     private float diemCK;
     private float trongSoQT;
+    private int SoTinChi;
 
     public Diem(String maLop, String maHP, String MSSV, float diemQT, float diemCK, float trongSoQT) {
         this.maLop = maLop;
@@ -24,6 +21,16 @@ public class Diem {
         this.diemQT = diemQT;
         this.diemCK = diemCK;
         this.trongSoQT = trongSoQT;
+    }
+
+    public Diem(String maLop, String maHP, String MSSV, float diemQT, float diemCK, float trongSoQT, int SoTinChi) {
+        this.maLop = maLop;
+        this.maHP = maHP;
+        this.MSSV = MSSV;
+        this.diemQT = diemQT;
+        this.diemCK = diemCK;
+        this.trongSoQT = trongSoQT;
+        this.SoTinChi = SoTinChi;
     }
 
     public String getMaLop() {
@@ -72,6 +79,14 @@ public class Diem {
 
     public void setTrongSoQT(float trongSoQT) {
         this.trongSoQT = trongSoQT;
+    }
+
+    public int getSoTinChi() {
+        return SoTinChi;
+    }
+
+    public void setSoTinChi(int SoTinChi) {
+        this.SoTinChi = SoTinChi;
     }
 
 }

@@ -8,14 +8,9 @@ import controller.ThemSua_HocPhanController;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import model.HocPhan;
 
-/**
- *
- * @author nnminh322
- */
 public class ThemSua_HocPhan extends javax.swing.JFrame {
 
     /**
